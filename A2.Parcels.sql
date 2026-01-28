@@ -1,3 +1,5 @@
+-- Austin Mishler's query
+-- it find sales over $300,000 and over 3 acres
 CREATE OR REPLACE VIEW student.v_parcels_final AS
 SELECT
 	defaultdb.enterprise.parcels_core.pin,
@@ -14,4 +16,4 @@ ON
 	defaultdb.enterprise.parcel_sales.pin =
 	defaultdb.enterprise.parcels_core.pin
 WHERE
-	defaultdb.enterprise.parcel_sales.sale_value > 300000 ;
+	defaultdb.enterprise.parcel_sales.sale_value > 300000 AND defaultdb.enterprise.parcels_core.acres_poly >3;
